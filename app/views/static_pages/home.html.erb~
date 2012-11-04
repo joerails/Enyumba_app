@@ -1,0 +1,11 @@
+<% provide(:title, 'Home') %>
+<!DOCTYPE html>
+<html>
+<head>
+<title> <%= yield(:title) %></title>
+</head>
+<body>
+<h1>Enyumba Agency</h1>
+<p>Enyumba Agency </p>
+</body>
+</html>
