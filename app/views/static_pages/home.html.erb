@@ -1,5 +1,48 @@
+<div class="front-welcome">
+  		<div class="front-welcome-text">
+ 			<h1> Welcome to E-Nyumba </h1>
+			<p> Your One Stop online agency to cater for all your house  renting needs.Register with us today!!!</p>
+ 		</div>
+	</div>
+
+   
+<div class = "signup-btn">
+    <%= link_to "Sign up now!",logup_path, 
+                                class: "btn btn-large btn-primary" %>
+</div>
+
+ <div class= " search" >
 
 
-<h1>Enyumba Agency</h1>
-<p>Enyumba Agency </p>
 
+ < /div >
+
+
+<div class = "front-picha ">
+    <div id="myCarousel" class="carousel slide">
+    <!-- Carousel items -->
+    <div class="carousel-inner">
+
+
+    <div class="active item">  <%= link_to image_tag("hw2.jpg", alt: ""), '#' %> </div>
+    <div class="item"> <%= link_to image_tag("hw.jpg", alt: ""), '#' %> </div>
+    
+<div class="item"> <%= link_to image_tag("kk.jpg", alt: ""), '#' %> </div>
+
+    </div>
+
+
+    <!-- Carousel nav -->
+    <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+    <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+    
+</div>
+
+</div>
+<script>
+$('.carousel.slide').carousel({
+    interval: 2000
+});
+    </script>
+
+   
