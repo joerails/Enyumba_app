@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121106013241) do
+ActiveRecord::Schema.define(:version => 20121106225312) do
 
   create_table "clients", :force => true do |t|
     t.string   "name"
@@ -30,5 +30,31 @@ ActiveRecord::Schema.define(:version => 20121106013241) do
   end
 
   add_index "clients", ["email"], :name => "index_clients_on_email", :unique => true
+
+  create_table "houses", :force => true do |t|
+    t.integer  "landlord_id"
+    t.string   "location"
+    t.string   "category"
+    t.integer  "price"
+    t.text     "description"
+    t.datetime "created_at",          :null => false
+    t.datetime "updated_at",          :null => false
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
+  end
+
+  create_table "landlords", :force => true do |t|
+    t.string   "name"
+    t.string   "email"
+    t.integer  "mobile_No"
+    t.string   "location"
+    t.integer  "national_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  add_index "landlords", ["email"], :name => "index_landlords_on_email", :unique => true
 
 end

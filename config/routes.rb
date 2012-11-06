@@ -1,4 +1,8 @@
 EnyumbaApp::Application.routes.draw do
+  get "houses/new"
+
+  get "landlords/new"
+
   get "clients/new"
 
   root to: 'static_pages#home'
