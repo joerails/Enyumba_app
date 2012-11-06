@@ -1,5 +1,5 @@
 class ClientsController < ApplicationController
   def new
   end
-
+include Devise::TestHelpers
 end

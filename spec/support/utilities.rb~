@@ -1,5 +1,5 @@
 def full_title(page_title)
-  base_title = "E-Nyumba Agency"
+  base_title = ""
   if page_title.empty?
     base_title
   else
