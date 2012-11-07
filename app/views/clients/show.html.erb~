@@ -1,0 +1,13 @@
+
+<% provide(:title, @client.name) %>
+
+<div class="row">
+  <aside class="span4">
+    <section>
+<h1>               
+        <%= @client.name %>
+        <%= image_tag @client.avatar.url( :thumb) %>
+      </h1>
+  </section>
+  </aside>
+</div>

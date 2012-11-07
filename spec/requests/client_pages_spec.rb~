@@ -4,10 +4,15 @@ describe "Client pages" do
 
   subject { page }
 
-  describe "logup page" do
-    before { visit signup_path }
+  describe "profile  page" do
+    
 
-    it { should have_selector('h1',    text: 'log up') }
-    it { should have_selector('title', text: full_title('log up')) }
+let(:client) { FactoryGirl.create(:client) }
+    before { visit logup_path (client) }
+
+    it { should have_selector('h1',    text: client.name) }
+    it { should have_selector('title', text: client.name) }
   end
+
+
 end

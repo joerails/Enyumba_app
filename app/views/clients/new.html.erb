@@ -1,2 +1,38 @@
-<h1>log up</h1>
-<p>Find me in app/views/clients/new.html.erb</p>
+
+<% provide(:title, 'log up') %>
+<h1>Sign Up Here</h1>
+
+<h2>Ensure that you fill all the fields correctly</h2>
+
+<div class="row">
+  <div class="span6 offset3">
+    <%= form_for(@client) do |f| %>
+    <%= render 'shared/error_messages', object: f.object %>
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+
+      <%= f.label :email %>
+      <%= f.text_field :email %>
+
+      <%= f.label :password %>
+      <%= f.password_field :password %>
+
+      <%= f.label :password_confirmation, "Confirmation" %>
+      <%= f.password_field :password_confirmation %>
+
+	<%= f.label :mobile_No %>
+      <%= f.text_field :mobile_No %>
+
+<%= f.label :Address %>
+      <%= f.text_field :address %>
+
+<%= f.label :Postcode %>
+      <%= f.text_field :post_code %>
+
+      <%= f.label :avatar, "Your Profile Picture" %>
+      <%= f.file_field :avatar %>
+
+      <%= f.submit "Create my account", class: "btn btn-large btn-primary" %>
+    <% end %>
+  </div>
+</div>

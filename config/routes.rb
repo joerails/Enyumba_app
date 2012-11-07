@@ -3,9 +3,17 @@ EnyumbaApp::Application.routes.draw do
 
   get "landlords/new"
 
-  get "clients/new"
+  
+
+resources :clients
+resources :landlords
+resources :houses
+
+
+
 
   root to: 'static_pages#home'
+
 
   match '/help',    to: 'static_pages#help'
 match '/logup',  to: 'clients#new'
