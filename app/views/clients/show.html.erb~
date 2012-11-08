@@ -4,10 +4,11 @@
 <div class="row">
   <aside class="span4">
     <section>
-<h1>               
+<h1>    
+ <%= image_tag @client.avatar.url( :thumb) %>           
         <%= @client.name %>
-        <%= image_tag @client.avatar.url( :thumb) %>
+       
       </h1>
   </section>
   </aside>
-</div>
+</div>67

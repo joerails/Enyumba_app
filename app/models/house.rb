@@ -4,6 +4,7 @@ class House < ActiveRecord::Base
 
 has_attached_file :avatar, :styles => { :medium => "300x300>",  square: '200x200#', :thumb => "100x100>" }
 
+
 validates :category, presence: true
 validates :description, presence: true
 validates :location, presence: true

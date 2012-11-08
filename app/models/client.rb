@@ -1,5 +1,6 @@
 class Client < ActiveRecord::Base
-  attr_accessible :address, :email, :mobile_No, :name, :password, :post_code , :password_confirmation , :avatar
+  attr_accessible :address, :email, :mobile_No, :name, :password, :post_code , :password_confirmation , :admin_user_id, :avatar
+belongs_to :admin_user
 has_secure_password
 before_save { |client| client.email = email.downcase }  
 

@@ -1,12 +1,13 @@
 class Client < ActiveRecord::Base
-  attr_accessible :address, :email, :mobile_No, :name, :password, :post_code , :password_confirmation
+  attr_accessible :address, :email, :mobile_No, :name, :password, :post_code , :password_confirmation , :admin_user_id, :avatar
+belongs_to :admin_user
 has_secure_password
 before_save { |client| client.email = email.downcase }  
 
 
 has_attached_file :avatar, :styles => { :medium => "300x300>",  square: '200x200#', :thumb => "100x100>" }
 
-
+validates :admin_user_id
 
 
  validates :name, presence: true , length: { maximum: 30 }
