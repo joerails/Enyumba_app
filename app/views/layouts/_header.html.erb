@@ -1,12 +1,30 @@
 <header class="navbar navbar-fixed-top">
   <div class="navbar-inner">
     <div class="container">
-      <%= link_to "Enyumba Agency", '#', id: "logo" %>
+        <%= link_to "Enyumba Agency", root_path , id: "logo" %>
       <nav>
         <ul class="nav pull-right">
           <li><%= link_to "Home",  root_path  %></li>
           
-          <li><%= link_to "Sign in", help_path%></li>
+          <% if logged_in? %>
+
+           <li><%= link_to "Admin", '#' %></li>
+
+              <ul class="nav nav-pills">
+
+                <li class="active"><%= link_to "Inbox", '#' %></li>
+
+                <li class="active"><%= link_to "Profile", current_client %></li>
+                <li class="active"><%= link_to "Payment", '#' %></li>
+                <li class="divider"></li>
+                <li class="active">
+                  <%= link_to "Sign out", logout_path, method: "delete" %>
+                </li>
+              </ul>
+            </li>
+            <% else %>
+            <li><%= link_to "Sign in", login_path %></li>
+          <% end %>
         </ul>
       </nav>
     </div>

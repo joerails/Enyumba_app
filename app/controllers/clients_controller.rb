@@ -12,6 +12,7 @@ def show
 def create
     @client = Client.new(params[:client])
     if @client.save
+      log_in @client
 flash[:success] = "Welcome to the Enyumba website!"
 redirect_to @client
       # Handle a successful save.

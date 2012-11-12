@@ -3,7 +3,7 @@ class Client < ActiveRecord::Base
 belongs_to :admin_user
 has_secure_password
 before_save { |client| client.email = email.downcase }  
-
+before_save :create_remember_token
 
 has_attached_file :avatar, :styles => { :medium => "300x300>",  square: '200x200#', :thumb => "100x100>" }
 
@@ -21,4 +21,9 @@ validates :password, presence: true, length: { minimum: 6 }
   validates :password_confirmation, presence: true 
 validates_confirmation_of :password, presence: true
 validates :mobile_No, presence: true, length: { minimum: 13 }
+private
+
+    def create_remember_token
+      self.remember_token = SecureRandom.urlsafe_base64
+    end
 end

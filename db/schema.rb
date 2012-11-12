@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121108092512) do
+ActiveRecord::Schema.define(:version => 20121112075236) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -60,9 +60,11 @@ ActiveRecord::Schema.define(:version => 20121108092512) do
     t.datetime "avatar_updated_at"
     t.string   "password_digest"
     t.integer  "admin_user_id"
+    t.string   "remember_token"
   end
 
   add_index "clients", ["email"], :name => "index_clients_on_email", :unique => true
+  add_index "clients", ["remember_token"], :name => "index_clients_on_remember_token"
 
   create_table "houses", :force => true do |t|
     t.integer  "landlord_id"
